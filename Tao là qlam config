@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>App config kulamios 2.0</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <div class="min-h-screen flex">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-gray-800 p-6 space-y-6">
+      <h1 class="text-2xl font-bold">Kulamios Config</h1>
+      <nav class="space-y-4">
+        <button class="block w-full text-left hover:text-blue-400">Tùy Chọn Chức Năng</button>
+        <button class="block w-full text-left text-gray-400">Mục Này Đang Bảo Trì</button>
+        <button class="block w-full text-left hover:text-blue-400">DPI</button>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="flex-1 p-8">
+      <header class="flex justify-between items-center mb-8">
+        <div>
+          <h2 class="text-xl font-semibold">Thông Báo</h2>
+          <p class="text-sm text-gray-400">Kulamios xin kính chào quý khách!</p>
+        </div>
+        <input type="text" placeholder="Tìm chức năng..." class="bg-gray-700 rounded px-4 py-2 focus:outline-none">
+      </header>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-4 gap-6 mb-10">
+        <div class="bg-gray-700 p-4 rounded-xl text-center">
+          <p class="text-2xl font-bold">72</p>
+          <p class="text-gray-400 text-sm">Số người dùng</p>
+        </div>
+        <div class="bg-green-600 p-4 rounded-xl text-center">
+          <p class="text-2xl font-bold">100%</p>
+          <p class="text-white text-sm">Độ an toàn</p>
+        </div>
+        <div class="bg-yellow-500 p-4 rounded-xl text-center">
+          <p class="text-2xl font-bold">54</p>
+          <p class="text-white text-sm">FPS</p>
+        </div>
+        <div class="bg-red-600 p-4 rounded-xl text-center">
+          <p class="text-2xl font-bold">154</p>
+          <p class="text-white text-sm">Tổng khách hàng</p>
+        </div>
+      </div>
+
+      <!-- Chức năng -->
+      <section>
+        <h3 class="text-lg font-semibold mb-4">Chức Năng DNS</h3>
+        <div class="grid grid-cols-2 gap-4">
+          <button onclick="toggle(this)" class="bg-gray-700 hover:bg-blue-600 p-4 rounded-xl text-left">Fix Lag Máy</button>
+          <button onclick="toggle(this)" class="bg-gray-700 hover:bg-blue-600 p-4 rounded-xl text-left">Buff FPS Game</button>
+          <button onclick="toggle(this)" class="bg-gray-700 hover:bg-blue-600 p-4 rounded-xl text-left">Giảm Rung Tâm</button>
+          <button onclick="toggle(this)" class="bg-gray-700 hover:bg-blue-600 p-4 rounded-xl text-left">Aimlock 85%</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function toggle(el) {
+      if (el.classList.contains('bg-blue-600')) {
+        el.classList.remove('bg-blue-600');
+        el.classList.add('bg-gray-700');
+        el.innerText = el.innerText.replace(' (Đã Bật)', '');
+      } else {
+        el.classList.remove('bg-gray-700');
+        el.classList.add('bg-blue-600');
+        if (!el.innerText.includes(' (Đã Bật)')) {
+          el.innerText += ' (Đã Bật)';
+        }
+      }
+    }
+  </script>
+</body>
+</html>
